@@ -111,12 +111,10 @@ int trap1array(vector<int> &height)
   prev[n - 1] = -1;
   for (int i = n - 2; i >= 0; i--)
   {
-    int temp;
-    temp = max;
+    if (max < prev[i])
+      prev[i] = max;
     if (height[i] > max)
       max = height[i];
-    // minimum
-    prev[i] = min(temp, prev[i]);
   }
 
   // water amount
@@ -133,6 +131,7 @@ int trap1array(vector<int> &height)
 
 int main()
 {
-  int mini = min(2, 2);
-  cout << mini;
+  vector<int> vec = {0, 1, 0, 2, 1, 0, 1, 3, 2, 1, 2, 1};
+  int trapWater = trap2arrays(vec);
+  cout << trapWater;
 }
