@@ -93,7 +93,7 @@ int trap2arrays(vector<int> &height)
   return water;
 }
 
-int trap1array(vector<int> &height)
+int trap1arrays(vector<int> &height)
 {
   int n = height.size();
   vector<int> prev(n);
@@ -132,6 +132,6 @@ int trap1array(vector<int> &height)
 int main()
 {
   vector<int> vec = {0, 1, 0, 2, 1, 0, 1, 3, 2, 1, 2, 1};
-  int trapWater = trap2arrays(vec);
+  int trapWater = trap1arrays(vec);
   cout << trapWater;
 }
